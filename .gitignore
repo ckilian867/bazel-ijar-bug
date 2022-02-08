@@ -7,3 +7,4 @@ bazel-bin
 bazel-out
 bazel-testlogs
 *.class
+bazel-ijar-bug
