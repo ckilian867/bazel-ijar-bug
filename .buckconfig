@@ -1,0 +1,3 @@
+[scala]
+  compiler=//ijar-test:scala-compiler.jar
+  library=//ijar-test:scala-library

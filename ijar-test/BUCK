@@ -1,0 +1,45 @@
+prebuilt_jar(
+    name = "scala-compiler",
+    binary_jar = "scala-compiler-2.11.12.jar",
+    deps = [
+        ":scala-library",
+        ":scala-reflect",
+    ]
+)
+
+java_binary(
+    name = "scala-compiler.jar",
+    main_class = "scala.tools.nsc.Main",
+    visibility = [
+        "PUBLIC",
+    ],
+    deps = [
+        ":scala-compiler",
+    ],
+)
+
+
+prebuilt_jar(
+    name = "scala-library",
+    binary_jar = "scala-library-2.11.12.jar"
+)
+
+prebuilt_jar(
+    name = "scala-reflect",
+    binary_jar = "scala-reflect-2.11.12.jar"
+)
+
+prebuilt_jar(
+    name = "scalactic",
+    binary_jar = "scalactic_2.11-3.0.5.jar",
+    deps = [
+        ":scala-library",
+        ":scala-reflect",
+    ]
+)
+
+scala_library(
+   name = "ijartest",
+   srcs = ["Problem.scala"],
+   deps = [":scalactic"]
+)

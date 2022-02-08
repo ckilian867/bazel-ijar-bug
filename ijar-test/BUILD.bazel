@@ -1,0 +1,17 @@
+load("@rules_java//java:defs.bzl", "java_import")
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library", "scala_test")
+
+java_import(
+    name = "scalactic",
+    jars = [
+        "scala-library-2.11.12.jar",
+        "scala-reflect-2.11.12.jar",
+        "scalactic_2.11-3.0.5.jar"
+    ]
+)
+
+scala_library(
+   name = "ijartest",
+   srcs = ["Problem.scala"],
+   deps = [":scalactic"]
+)
